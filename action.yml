@@ -1,0 +1,34 @@
+name: 'Orgtools Data Copy'
+description: 'Start Data Copy'
+inputs:
+    datatemplatename:
+        description: 'Name of data template to use for data copy.'
+        required: true
+    maxIterations:
+        description: 'Maximum automatic retries of data copy.'
+        required: false
+        default: '3'
+    notificationEmailAddress:
+        description: 'Notication Email Recipient.'
+        required: false
+    disableValidations:
+        description: 'Disable destination metadata during data copy.'
+        required: false
+        default: 'true'
+    replaceInactiveUsers:
+        description: 'Replace references to inactive user Ids with your user Id.'
+        required: false
+        default: 'true'
+    useDefaultRecordType:
+        description: 'Replace inactive and blank record type Ids with object's default record type Id.'
+        required: false
+        default: 'true'
+    apiToken:
+        description: 'OrgTools API Token.'
+        required: true
+outputs:
+    response:
+        description: 'Data Copy Results.'
+runs:
+    using: 'node12'
+    main: 'dist/index.js'
