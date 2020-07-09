@@ -27,4 +27,4 @@ jobs:
 
 ### Output
 
-- `response` Request Response as JSON String
+- `response` Data Copy Response as JSON String
