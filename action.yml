@@ -20,7 +20,7 @@ inputs:
         required: false
         default: 'true'
     useDefaultRecordType:
-        description: 'Replace inactive and blank record type Ids with object's default record type Id.'
+        description: 'Replace inactive and blank record type Ids with objects default record type Id.'
         required: false
         default: 'true'
     apiToken:
