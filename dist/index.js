@@ -2633,10 +2633,11 @@ const axios = __webpack_require__(53);
 
 const headers = { 
   'Content-Type': 'application/json',
-  'authorization': core.getInput('apiToken')
+  'Authorization': core.getInput('apiToken')
 };
 
 let payload = {
+  projectname: core.getInput('projectname') || '',
   datatemplatename: core.getInput('datatemplatename') || '',
   maxIterations: parseInt(core.getInput('maxIterations') || 3, 10),
   notificationEmailAddress: core.getInput('notificationEmailAddress') || '',
