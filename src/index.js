@@ -24,9 +24,9 @@ let payload = {
       headers
     });
 
-    console.log(JSON.stringify(instance));
+    let startDataCopyResult = await instance.post('/start-data-copy', payload);
 
-    // let startDataCopyResult = await instance.post('start-data-copy', payload);
+    console.log(JSON.stringify(startDataCopyResult));
 
     // core.setOutput('response', JSON.stringify(startDataCopyResult.data))
 
