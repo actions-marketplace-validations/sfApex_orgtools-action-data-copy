@@ -16,29 +16,29 @@ let payload = {
 };
 
 (async() => {
-  try {
+  // try {
     
-    const instance = axios.create({
-      baseURL: 'https://orgtools-rest-api-qa.herokuapp.com/',
-      timeout: 5000,
-      headers
-    });
+  //   const instance = axios.create({
+  //     baseURL: 'https://orgtools-rest-api-qa.herokuapp.com/',
+  //     timeout: 5000,
+  //     headers
+  //   });
 
-    let startDataCopyResult = await instance.post('start-data-copy', payload);
+  //   let startDataCopyResult = await instance.post('start-data-copy', payload);
 
-    core.setOutput('response', JSON.stringify(startDataCopyResult.data))
+  //   core.setOutput('response', JSON.stringify(startDataCopyResult.data))
 
-  } catch (error) {
-    if (error.toJSON) {
-      core.setOutput(error.toJSON());
-    }
+  // } catch (error) {
+  //   if (error.toJSON) {
+  //     core.setOutput(error.toJSON());
+  //   }
 
-    if (error.response) {
-      core.setFailed(JSON.stringify({ code: error.response.code, message: error.response.data }))
-    } else if (error.request) {
-      core.setFailed(JSON.stringify({ error: "no response received" }));
-    } else {
-      core.setFailed(error.message);
-    }
-  }
+  //   if (error.response) {
+  //     core.setFailed(JSON.stringify({ code: error.response.code, message: error.response.data }))
+  //   } else if (error.request) {
+  //     core.setFailed(JSON.stringify({ error: "no response received" }));
+  //   } else {
+  //     core.setFailed(error.message);
+  //   }
+  // }
 })()
