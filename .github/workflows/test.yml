@@ -13,5 +13,5 @@ jobs:
       - name: Start Data Copy
         uses: ./
         with:
-          datatemplatename: 'HelloWorld'
+          datatemplatename: 'Tes Copy'
           apiToken: 'a39966d6-7d90-4661-bd9c-a0945c1854e7'
