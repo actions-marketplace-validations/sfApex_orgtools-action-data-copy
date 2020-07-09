@@ -13,7 +13,7 @@ let payload = {
   disableValidations: (core.getInput('disableValidations') || 'true') === 'true',
   replaceInactiveUsers: (core.getInput('replaceInactiveUsers') || 'true') === 'true',
   useDefaultRecordType: (core.getInput('useDefaultRecordType') || 'true') === 'true'
-}
+};
 
 (async() => {
   try {
