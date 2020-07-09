@@ -23,7 +23,7 @@ jobs:
 |disableValidations    | Disable destination metadata during data copy. | true |
 |replaceInactiveUsers| Replace references to inactive user Ids with your user Id. | true |
 |useDefaultRecordType| Replace inactive and blank record type Ids with object's default record type Id. | true |
-|apiToken| OrgTools API Token. ||
+|apiToken| OrgTools API Token. | _required_ |
 
 ### Output
 
