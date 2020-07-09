@@ -2633,7 +2633,7 @@ const axios = __webpack_require__(53);
 
 const headers = { 
   'Content-Type': 'application/json',
-  'Authorization': core.getInput('apiToken')
+  'authorization': core.getInput('apiToken')
 };
 
 let payload = {

@@ -3,7 +3,7 @@ const axios = require("axios");
 
 const headers = { 
   'Content-Type': 'application/json',
-  'Authorization': core.getInput('apiToken')
+  'authorization': core.getInput('apiToken')
 };
 
 let payload = {
