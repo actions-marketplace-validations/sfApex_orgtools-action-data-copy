@@ -25,7 +25,7 @@ let payload = {
       headers
     });
 
-    let startDataCopyResult = await instance.post('/start-data-copy', payload);
+    let startDataCopyResult = await instance.post('/start-data-copy', payload); 
 
     console.log(JSON.stringify(startDataCopyResult));
 
