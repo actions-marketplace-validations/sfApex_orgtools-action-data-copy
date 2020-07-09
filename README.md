@@ -7,36 +7,24 @@ Example Usage:
 jobs:
     deployment
         - name: Copy Test Data
-            uses: fjogeleit/http-request-action@master
+            uses: sfApex/orgtools-action-data-copy@master
             with:
-                url: 'https://ansible.io/api/v2/job_templates/84/launch/'
-                method: 'POST'
-                username: ${{ secrets.AWX_USER }}
-                password: ${{ secrets.AWX_PASSWORD }}
+                datatemplatename: 'DataTemplateName'
+                apiToken: 'a39966d6-7d90-4661-bd9c-a0945c1854e7'
 ```
 
 ### Input Arguments
 
 |Argument|  Description  |  Default  |
 |--------|---------------|-----------|
-|url     | Request URL   | _required_ Field |
-|method  | Request Method| POST |
-|contentType  | Request ContentType| application/json |
-|data    | Request Body Content as JSON String, only for POST / PUT / PATCH Requests | '{}' |
-|timeout| Request Timeout in ms | 5000 (5s) |
-|username| Username for Basic Auth ||
-|password| Password for Basic Auth ||
-|bearerToken| Bearer Authentication Token (without Bearer Prefix) ||
-|customHeaders| Additional header values as JSON string, keys in this object overwrite default headers like Content-Type |'{}'|
+|datatemplatename     | Name of data template to use for data copy.   | _required_ |
+|maxIterations  | Maximum automatic retries of data copy.| 3 |
+|notificationEmailAddress  | Notication Email Recipient.||
+|disableValidations    | Disable destination metadata during data copy. | true |
+|replaceInactiveUsers| Replace references to inactive user Ids with your user Id. | true |
+|useDefaultRecordType| Replace inactive and blank record type Ids with object's default record type Id. | true |
+|apiToken| OrgTools API Token. ||
 
 ### Output
 
 - `response` Request Response as JSON String
-
-
-### Debug Informations
-
-Enable Debug mode to get informations about
-
-- Instance Configuration (Url / Timeout / Headers)
-- Request Data (Body / Auth / Method)
