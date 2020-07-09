@@ -1,6 +1,9 @@
 name: 'Orgtools Data Copy'
 description: 'Start Data Copy'
 inputs:
+    projectname:
+        description: 'Name of the project containing the data template to use for the data copy.'
+        required: true
     datatemplatename:
         description: 'Name of data template to use for data copy.'
         required: true

@@ -7,6 +7,7 @@ const headers = {
 };
 
 let payload = {
+  projectname: core.getInput('projectname') || '',
   datatemplatename: core.getInput('datatemplatename') || '',
   maxIterations: parseInt(core.getInput('maxIterations') || 3, 10),
   notificationEmailAddress: core.getInput('notificationEmailAddress') || '',

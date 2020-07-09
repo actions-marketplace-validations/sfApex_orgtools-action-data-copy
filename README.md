@@ -17,6 +17,7 @@ jobs:
 
 |Argument|  Description  |  Default  |
 |--------|---------------|-----------|
+|projectname     | Name of the project containing the data template to use for the data copy.   | _required_ |
 |datatemplatename     | Name of data template to use for data copy.   | _required_ |
 |maxIterations  | Maximum automatic retries of data copy.| 3 |
 |notificationEmailAddress  | Notication Email Recipient.||
