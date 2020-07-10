@@ -10,7 +10,7 @@ let payload = {
   projectname: core.getInput('projectname') || '',
   datatemplatename: core.getInput('datatemplatename') || '',
   maxIterations: parseInt(core.getInput('maxIterations') || 3, 10),
-  notificationEmailAddress: core.getInput('notificationEmailAddress') || '',
+  notificationEmailAddress: core.getInput('notificationEmailAddress') || null,
   disableValidations: (core.getInput('disableValidations') || 'true') === 'true',
   replaceInactiveUsers: (core.getInput('replaceInactiveUsers') || 'true') === 'true',
   useDefaultRecordType: (core.getInput('useDefaultRecordType') || 'true') === 'true'
