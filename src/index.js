@@ -1,7 +1,7 @@
 const core = require("@actions/core");
 const axios = require("axios");
 
-const headers = { 
+const headers = {
   'Content-Type': 'application/json',
   'authorization': core.getInput('apiToken')
 };
@@ -16,18 +16,23 @@ let payload = {
   useDefaultRecordType: (core.getInput('useDefaultRecordType') || 'true') === 'true'
 };
 
-(async() => {
+(async () => {
   try {
-    
+
     let instance = axios.create({
       baseURL: 'https://orgtools-rest-api-qa.herokuapp.com/',
       timeout: 5000,
       headers
     });
 
-    let startDataCopyResult = await instance.post('/start-data-copy', payload); 
+    let startDataCopyResult = await instance.post('/start-data-copy', payload);
 
-    //core.setOutput('response', startDataCopyResult.data)
+    let taskId;
+    if (startDataCopyResult && startDataCopyResult.length > 0) {
+      taskId = startDataCopyResult[0].id;
+    }
+    
+    core.setOutput('response', taskId)
 
   } catch (error) {
     // if (error.toJSON) {
