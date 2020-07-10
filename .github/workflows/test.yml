@@ -13,6 +13,6 @@ jobs:
       - name: Start Data Copy
         uses: ./
         with:
-          projectname: 'Kashyap'
-          datatemplatename: 'Tes Copy'
-          apiToken: 'a39966d6-7d90-4661-bd9c-a0945c1854e7'
+          projectname: 'Demo Jam'
+          datatemplatename: 'Populate Sandbox'
+          apiToken: '8475d012-dab4-4698-8578-14ff163337f3'

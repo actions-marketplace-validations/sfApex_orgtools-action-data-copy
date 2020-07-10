@@ -9,6 +9,7 @@ jobs:
         - name: Copy Test Data
             uses: sfApex/orgtools-action-data-copy@master
             with:
+                projectname: 'My Data Copy Projects'
                 datatemplatename: 'DataTemplateName'
                 apiToken: 'a39966d6-7d90-4661-bd9c-a0945c1854e7'
 ```
@@ -28,4 +29,4 @@ jobs:
 
 ### Output
 
-- `response` Data Copy Response as JSON String
+- `taskId` OrgTools Data Copy Task Id

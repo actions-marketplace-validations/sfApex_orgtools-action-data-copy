@@ -20,7 +20,7 @@ let payload = {
   try {
 
     let instance = axios.create({
-      baseURL: 'https://orgtools-rest-api-qa.herokuapp.com/',
+      baseURL: 'https://orgtools-rest-api-prod.herokuapp.com/',
       timeout: 5000,
       headers
     });
@@ -62,12 +62,12 @@ let payload = {
 
     core.info(`Data copy ${task.taskstate.toLowerCase()} with ${task.completedcount.toLocaleString('en')} successful${task.errorcount > 0 ? ` and ${task.errorcount.toLocaleString('en')} failed` : ''} records in ${diffMinutes} minutes.`);
 
-    core.setOutput('response', task.id);
+    core.setOutput('taskId', task.id);
 
   } catch (error) {
-    // if (error.toJSON) {
-    //   core.setOutput(error.toJSON());
-    // }
+    if (error.toJSON) {
+      core.setOutput(error.toJSON());
+    }
 
     if (error.response) {
       core.setFailed(JSON.stringify({ code: error.response.code, message: error.response.data }))
