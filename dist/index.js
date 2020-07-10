@@ -2655,16 +2655,14 @@ let payload = {
       headers
     });
 
-    let startDataCopyResult = await instance.post('/start-data-copy', payload);
+    let startDataCopyResult = await instance.post('/start-data-copy', payload); 
 
-    console.log(JSON.stringify(startDataCopyResult));
-
-    // core.setOutput('response', JSON.stringify(startDataCopyResult.data))
+    //core.setOutput('response', startDataCopyResult.data)
 
   } catch (error) {
-    if (error.toJSON) {
-      core.setOutput(error.toJSON());
-    }
+    // if (error.toJSON) {
+    //   core.setOutput(error.toJSON());
+    // }
 
     if (error.response) {
       core.setFailed(JSON.stringify({ code: error.response.code, message: error.response.data }))
