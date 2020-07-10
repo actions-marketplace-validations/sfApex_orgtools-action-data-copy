@@ -2669,7 +2669,22 @@ let payload = {
     
     core.endGroup()
 
-    core.setOutput('response', taskId)
+    core.startGroup('Detailed Data Copy Progress');
+    while(task && task.taskstate === 'In Progress') {
+      let taskStateResult = await instance.get(`/task-status/${task.id}`);
+      task = taskStateResult.data;
+
+      if(task) {
+        let completionPercentage = Number((task.completedcount + task.errorcount) / task.totalcount);
+
+        let status = `Progress: ${completionPercentage.padStart(5)}% (Completed: ${task.completedcount.toLocaleString('en')} / Failed: ${task.errorcount.toLocaleString('en')} / Total: ${task.totalcount.toLocaleString('en')})`;
+        core.info(status);
+      }
+    }
+    core.endGroup()
+
+
+    core.setOutput('response', task.id);
 
   } catch (error) {
     // if (error.toJSON) {
