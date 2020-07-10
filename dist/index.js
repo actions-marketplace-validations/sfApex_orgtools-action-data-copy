@@ -2661,7 +2661,7 @@ let payload = {
 
     let taskId;
     if (startDataCopyResult.data && startDataCopyResult.data.length > 0) {
-      core.info(startDataCopyResult.data);
+      core.info(JSON.stringify(startDataCopyResult.data));
       // taskId = startDataCopyResult.data[0].id;
       // core.info(`Task Id: ${taskId}`);
       // core.info(`Description: ${startDataCopyResult[0].taskdescription}`);
