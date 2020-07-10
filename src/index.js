@@ -45,7 +45,7 @@ let payload = {
       task = taskStateResult.data;
 
       if(task && task.taskstate === 'In Progress') {
-        let completionPercentage = Math.ceil(((task.completedcount + task.errorcount) / task.totalcount) * 100.0).toString();
+        let completionPercentage = Math.floor(((task.completedcount + task.errorcount) / task.totalcount) * 100.0).toString();
 
         let status = `Progress: ${completionPercentage.padStart(5)}% (Completed: ${task.completedcount.toLocaleString('en')} / Failed: ${task.errorcount.toLocaleString('en')} / Total: ${task.totalcount.toLocaleString('en')})`;
         core.info(status);
