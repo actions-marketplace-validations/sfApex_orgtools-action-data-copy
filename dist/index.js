@@ -2657,10 +2657,10 @@ let payload = {
 
     core.startGroup('Starting Data Copy');
     let startDataCopyResult = await instance.post('/start-data-copy', payload);
-    core.info('Started Data Copy....');
+    core.info(`Started Data Copy.... ${startDataCopyResult.statusText}`);
 
     let taskId;
-    if (startDataCopyResult && startDataCopyResult.length > 0) {
+    if (startDataCopyResult.data && startDataCopyResult.data.length > 0) {
       taskId = startDataCopyResult[0].id;
       core.info(`Task Id: ${taskId}`);
       core.info(`Description: ${startDataCopyResult[0].taskdescription}`);
