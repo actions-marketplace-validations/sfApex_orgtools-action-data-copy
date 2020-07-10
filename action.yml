@@ -1,5 +1,8 @@
 name: 'Orgtools Data Copy'
 description: 'Start Data Copy'
+branding:
+    icon: 'copy'
+    color: 'red'
 inputs:
     projectname:
         description: 'Name of the project containing the data template to use for the data copy.'
