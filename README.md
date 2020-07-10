@@ -6,8 +6,8 @@ Example Usage:
 ```
 jobs:
     deployment
-        - name: Copy Test Data
-            uses: sfApex/orgtools-action-data-copy@master
+        - name: Orgtools Data Copy
+            uses: sfApex/orgtools-action-data-copy@v.1.0
             with:
                 projectname: 'My Data Copy Projects'
                 datatemplatename: 'DataTemplateName'
