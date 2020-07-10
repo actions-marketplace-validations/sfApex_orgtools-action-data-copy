@@ -2661,10 +2661,11 @@ let payload = {
 
     let taskId;
     if (startDataCopyResult.data && startDataCopyResult.data.length > 0) {
-      taskId = startDataCopyResult[0].id;
-      core.info(`Task Id: ${taskId}`);
-      core.info(`Description: ${startDataCopyResult[0].taskdescription}`);
-      core.info(`State: ${startDataCopyResult[0].taskstate}`);      
+      core.info(startDataCopyResult.data);
+      // taskId = startDataCopyResult.data[0].id;
+      // core.info(`Task Id: ${taskId}`);
+      // core.info(`Description: ${startDataCopyResult[0].taskdescription}`);
+      // core.info(`State: ${startDataCopyResult[0].taskstate}`);      
     }
     
     core.endGroup()
