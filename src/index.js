@@ -29,13 +29,12 @@ let payload = {
     let startDataCopyResult = await instance.post('/start-data-copy', payload);
     core.info(`Started Data Copy.... ${startDataCopyResult.statusText}`);
 
-    let taskId;
+    let task;
     if (startDataCopyResult.data && startDataCopyResult.data.length > 0) {
-      core.info(JSON.stringify(startDataCopyResult.data));
-      // taskId = startDataCopyResult.data[0].id;
-      // core.info(`Task Id: ${taskId}`);
-      // core.info(`Description: ${startDataCopyResult[0].taskdescription}`);
-      // core.info(`State: ${startDataCopyResult[0].taskstate}`);      
+      task = startDataCopyResult.data[0];
+      core.info(`Task Id: ${task.id}`);
+      core.info(`Description: ${task.taskdescription}`);
+      core.info(`State: ${task.taskstate}`);      
     }
     
     core.endGroup()
