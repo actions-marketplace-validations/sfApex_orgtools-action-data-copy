@@ -2669,13 +2669,13 @@ let payload = {
     
     core.endGroup()
 
-    core.startGroup('Detailed Data Copy Progress');
+    core.startGroup('Data Copy Progress');
     while(task && task.taskstate === 'In Progress') {
       let taskStateResult = await instance.get(`/task-status/${task.id}`);
       task = taskStateResult.data;
 
       if(task) {
-        let completionPercentage = ((task.completedcount + task.errorcount) / task.totalcount).toString();
+        let completionPercentage = Math.ceil(((task.completedcount + task.errorcount) / task.totalcount) * 100.0).toString();
 
         let status = `Progress: ${completionPercentage.padStart(5)}% (Completed: ${task.completedcount.toLocaleString('en')} / Failed: ${task.errorcount.toLocaleString('en')} / Total: ${task.totalcount.toLocaleString('en')})`;
         core.info(status);
@@ -2683,6 +2683,12 @@ let payload = {
     }
     core.endGroup()
 
+    let createddate = new Date(task.createddate);
+    let completeddate = new Date(task.createddate);
+
+    let diffMinutes = Math.abs((((createddate.getTime() - completeddate.getTime()) / 1000) / 60).toFixed(2));
+
+    core.info(`Data copy ${task.taskstate.toLowerCase()} with ${task.completedcount.toLocaleString('en')} successful${task.errorcount > 0 ? ` and ${task.errorcount.toLocaleString('en')} failed` : ''} records in ${diffMinutes} minutes)`);
 
     core.setOutput('response', task.id);
 
