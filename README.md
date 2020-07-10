@@ -7,7 +7,7 @@ Example Usage:
 jobs:
     deployment
         - name: Orgtools Data Copy
-            uses: sfApex/orgtools-action-data-copy@v.1.0
+            uses: sfApex/orgtools-action-data-copy@v.1.1
             with:
                 projectname: 'My Data Copy Projects'
                 datatemplatename: 'DataTemplateName'
