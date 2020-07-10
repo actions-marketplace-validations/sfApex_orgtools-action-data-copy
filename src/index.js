@@ -27,7 +27,7 @@ let payload = {
 
     let startDataCopyResult = await instance.post('/start-data-copy', payload); 
 
-    core.setOutput('response', JSON.stringify(startDataCopyResult.data))
+    core.setOutput('response', startDataCopyResult.data)
 
   } catch (error) {
     if (error.toJSON) {
